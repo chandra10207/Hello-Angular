@@ -3,21 +3,22 @@
 <input type="text" class="form-control" [(ngModel)]="serverName">
 <!-- <p>{{serverName}}</p> -->
 <button class="btn btn-primary" [disabled] = "!allowNewServer" (click)="onCreateServer()">Add server</button>
-<p>Allow new server {{ allowNewServer}}</p>
-<p [innerText]="allowNewServer"></p>
+<!-- <p>Allow new server {{ allowNewServer}}</p>
+<p [innerText]="allowNewServer"></p> -->
 
 <!-- <p>{{serverCreationStatus}}</p> -->
-<p *ngIf="serverCreated; else noserver">Server created with name {{serverName}}</p>
+<p *ngIf="serverCreated; else noserver">ngIF: Server created with name {{serverName}}</p>
 <ng-template #noserver>
     <p>No Server created.</p>
 </ng-template>
 
+<app-server></app-server>
 <app-server></app-server>
 
 
 
 <div class="container">
     <div class="row">
-        afafqefss
+       
     </div>
 </div>
