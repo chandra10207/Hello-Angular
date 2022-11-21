@@ -6,7 +6,8 @@
 <p>Allow new server {{ allowNewServer}}</p>
 <p [innerText]="allowNewServer"></p>
 
-<p>{{serverCreationStatus}}</p>
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated">Server created with name {{serverName}}</p>
 <app-server></app-server>
 
 
