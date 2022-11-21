@@ -9,7 +9,20 @@
         <app-warning-alert></app-warning-alert>
         <app-success-alert></app-success-alert>
 
-        <!-- <label for="">Username</label>
+       
+
+
+
+
+
+    </div>
+</div>
+
+
+<!-- <div class="cotainer">
+    <div class="row">
+        <h1>Assignment 1</h1>
+            <label for="">Username</label>
         <input type="text" class="form-control"[(ngModel)]="username">
         <p>username is: {{username}}</p>
 
@@ -17,7 +30,24 @@
         class="btn btn-primary" 
         [disabled]=" username === ''"
         (click)="username=''"
-        >Reset</button> -->
+        >Reset</button>
+
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <h1>Assignment 2</h1>
+        <button class="btn btn-md btn-primary" (click)="logDetails()"> Display Details</button>
+        <p *ngIf="displayDetails">Some Text</p>
+        <p 
+        *ngFor="let logItem of displayClickLog"
+        [ngStyle] = "{backgroundColor: logItem >=5 ? 'blue' : 'red'}"
+        [ngClass]= "{'white-text': logItem > 5}"
+        class="wwfeqfewf" >
+        {{logItem}}
+    </p>
+
 
     </div>
 </div>
