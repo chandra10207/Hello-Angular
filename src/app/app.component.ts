@@ -23,7 +23,8 @@ export class AppComponent {
   logDetails(){
     this.displayDetails =  !this.displayDetails;
     // alert("clicked");
-    this.displayClickLog.push(this.displayClickLog.length + 1 );
+    // this.displayClickLog.push(this.displayClickLog.length + 1 );
+    this.displayClickLog.push(new Date() );
   }
 
 

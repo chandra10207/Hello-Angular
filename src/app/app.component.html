@@ -35,19 +35,29 @@
     </div>
 </div> -->
 
-<!-- <div class="container">
+<div class="container">
     <div class="row">
         <h1>Assignment 2</h1>
         <button class="btn btn-md btn-primary" (click)="logDetails()"> Display Details</button>
         <p *ngIf="displayDetails">Some Text</p>
-        <p 
+        <!-- <p 
         *ngFor="let logItem of displayClickLog"
         [ngStyle] = "{backgroundColor: logItem >=5 ? 'blue' : 'red'}"
         [ngClass]= "{'white-text': logItem > 5}"
         class="wwfeqfewf" >
         {{logItem}}
+    </p> -->
+
+    <p 
+    *ngFor="let logItem of displayClickLog; let i = index "
+    [ngStyle] = "{backgroundColor: i >=5 ? 'blue' : 'red'}"
+    [ngClass]= "{'white-text': i > 5}"
+
+    >
+    {{logItem}}
+
     </p>
 
 
     </div>
-</div> -->
+</div>
