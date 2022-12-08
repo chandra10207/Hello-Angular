@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 // import { EventEmitter } from 'protractor';
 
 @Component({
@@ -10,6 +10,9 @@ export class CockpitComponent implements OnInit {
   @Output('sCreated') serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
   @Output('bCreated') bluepringCreated = new EventEmitter<{serverName:string, serverContent:string}>();
 
+
+  @ViewChild('serverContentInput') serverContentInput:ElementRef // ng > 8
+
   // newServerName = '';
   newServerContent = '';
 
@@ -20,11 +23,13 @@ export class CockpitComponent implements OnInit {
 
 
   onAddServer(serverName:HTMLInputElement) {
-    console.log(serverName);
+    console.log("hello");
+    console.log(this.serverContentInput);
     this.serverCreated.emit({
       // serverName: this.newServerName,
       serverName: serverName.value,
-      serverContent: this.newServerContent
+      // serverContent: this.newServerContent
+      serverContent: this.serverContentInput.nativeElement.value
     });
 
     // this.serverElements.push({
@@ -39,7 +44,8 @@ export class CockpitComponent implements OnInit {
     this.bluepringCreated.emit({
       // serverName: this.newServerName,
       serverName: serverNameInput.value,
-      serverContent: this.newServerContent
+      // serverContent: this.newServerContent
+      serverContent: this.serverContentInput.nativeElement.value
     });
     // this.serverElements.push({
     //   type: 'blueprint',
